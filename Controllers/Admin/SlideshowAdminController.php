@@ -249,7 +249,11 @@ class SlideshowAdminController extends FooController {
         $config_path = realpath(base_path('config/package-slideshow.php'));
         $package_path = realpath(base_path('vendor/foostart/package-slideshow'));
 
-        $config_bakup = realpath($package_path.'/storage/backup/config');
+        $config_bakup = $package_path.'/storage/backup/config';
+        if (!file_exists($config_bakup)) {
+            mkdir($config_bakup, 0755    , true);
+        }
+        $config_bakup = realpath($config_bakup);
 
         if ($version = $request->get('v')) {
             //load backup config
@@ -292,13 +296,21 @@ class SlideshowAdminController extends FooController {
         // display view
         $langs = config('package-slideshow.langs');
         $lang_paths = [];
+        $package_path = realpath(base_path('vendor/foostart/package-slideshow'));
 
         if (!empty($langs) && is_array($langs)) {
             foreach ($langs as $key => $value) {
                 $lang_paths[$key] = realpath(base_path('resources/lang/'.$key.'/slideshow-admin.php'));
+
+                $key_backup = $package_path.'/storage/backup/lang/'.$key;
+
+                if (!file_exists($key_backup)) {
+                    mkdir($key_backup, 0755    , true);
+                }
             }
         }
 
+        $lang_bakup = realpath($package_path.'/storage/backup/lang');
         $package_path = realpath(base_path('vendor/foostart/package-slideshow'));
 
         $lang_bakup = realpath($package_path.'/storage/backup/lang');
