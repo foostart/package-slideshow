@@ -10,7 +10,8 @@ return [
     |
     */
     'menus' => [
-        'top-menu' => 'Slideshows'
+        'top-menu' => 'Slideshows',
+        'undo' => 'Undo slideshows',
     ],
 
 
@@ -92,6 +93,8 @@ return [
         'add' => 'Add',
         'save' => 'Save',
         'delete' => 'Delete',
+        'delete-in-trash' => 'In trash',
+        'delete-forever' => 'Forever',
     ],
 
 
@@ -197,9 +200,9 @@ return [
     |
     */
     'labels' => [
-        'name' => 'slideshow name',
-        'overview' => 'slideshow overview',
-        'description' => 'slideshow description',
+        'name' => 'Slideshow name',
+        'overview' => 'Slideshow overview',
+        'description' => 'Slideshow description',
         'category' => 'Category name',
         'title-search' => 'Search slideshow',
         'title-backup' => 'Backups',
@@ -207,6 +210,9 @@ return [
         'name-style' => 'New style',
         'view-file' => 'View file',
         'view-content' => 'View content',
+        'style-select' => 'Slect style',
+        'images' => 'Images',
+        'image' => 'Image',
     ],
 
 
@@ -323,6 +329,8 @@ return [
         'name-style' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
         'view-style' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
         'view-content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+        'style-select' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+        'images' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
     ],
 
 
@@ -339,6 +347,26 @@ return [
     'order_by' => [
         'asc' => 'ASC',
         'desc' => 'DESC'
+    ],
+
+
+
+
+
+
+
+
+
+    /*
+    |-----------------------------------------------------------------------
+    | Hint
+    |-----------------------------------------------------------------------
+    | The list of hint
+    |
+    */
+    'hint'  => [
+        'delete-forever' => 'Delete forever',
+        'delete-in-trash' => 'Delete in trash',
     ],
 
 ];
