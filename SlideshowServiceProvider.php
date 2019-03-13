@@ -1,6 +1,6 @@
 <?php
 
-namespace Foostart\slideshow;
+namespace Foostart\Slideshow;
 
 use Illuminate\Support\ServiceProvider;
 use LaravelAcl\Authentication\Classes\Menu\SentryMenuFactory;
@@ -8,7 +8,7 @@ use URL,
     Route;
 use Illuminate\Http\Request;
 
-class slideshowServiceProvider extends ServiceProvider {
+class SlideshowServiceProvider extends ServiceProvider {
 
     /**
      * Bootstrap the application services.

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use URL,
     Route,
     Redirect;
-use Foostart\slideshow\Models\slideshows;
+use Foostart\Slideshow\Models\Slideshows;
 
 class SlideshowUserController extends Controller
 {
