@@ -25,26 +25,25 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `slideshows`
+-- Table structure for table `slideshow_styles`
 --
 
-DROP TABLE IF EXISTS `slideshows`;
-CREATE TABLE IF NOT EXISTS `slideshows` (
-  `slideshow_id` int(11) NOT NULL AUTO_INCREMENT,
-  `style_id` int(11) DEFAULT NULL,
+DROP TABLE IF EXISTS `slideshow_styles`;
+CREATE TABLE IF NOT EXISTS `slideshow_styles` (
+  `style_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,
-  `user_email` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `user_email` varchar(55) COLLATE utf8_unicode_ci DEFAULT NULL,
   `user_full_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `category_id` int(11) DEFAULT NULL,
-  `slideshow_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `slideshow_overview` text COLLATE utf8_unicode_ci,
-  `slideshow_description` text COLLATE utf8_unicode_ci,
-  `slideshow_image` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `slideshow_images` text COLLATE utf8_unicode_ci,
-  `slideshow_status` tinyint(4) DEFAULT NULL,
+  `style_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `style_image` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `style_view_file` varchar(55) CHARACTER SET utf8 DEFAULT NULL,
+  `style_js_file` varchar(1000) CHARACTER SET utf8 DEFAULT NULL,
+  `style_css_file` varchar(1000) CHARACTER SET utf8 DEFAULT NULL,
+  `style_view_content` text COLLATE utf8_unicode_ci,
+  `style_status` tinyint(4) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`slideshow_id`)
+  PRIMARY KEY (`style_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 COMMIT;
 
