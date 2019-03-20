@@ -85,7 +85,7 @@ class SlideshowServiceProvider extends ServiceProvider {
 
     protected function publishAssets() {
         $this->publishes([
-            __DIR__ . '/public' => public_path('packages/foostart/package-slideshow'),
+            __DIR__ . '/public' => public_path('packages/foostart'),
         ]);
     }
 
