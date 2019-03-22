@@ -1,6 +1,6 @@
 {
     "name": "foostart/package-slideshow",
-    "description": "Manage slideshow",
+    "description": "Create overview slideshow can intergrate other project",
     "keywords": [
         "foostart",
         "laravel 5 package slideshow"
