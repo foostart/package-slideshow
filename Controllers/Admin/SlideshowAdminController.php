@@ -398,12 +398,16 @@ class SlideshowAdminController extends FooController {
         }
 
         $categories = $this->obj_category->pluckSelect($params);
+        
+        //get slideshow style
+        $styles = $this->obj_style->pluckSelect();
 
         // display view
         $this->data_view = array_merge($this->data_view, array(
             'item' => $item,
             'categories' => $categories,
             'request' => $request,
+            'styles' => $styles,
             'context' => $context,
         ));
 
