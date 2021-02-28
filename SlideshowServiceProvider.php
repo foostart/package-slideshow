@@ -37,6 +37,12 @@ class SlideshowServiceProvider extends ServiceProvider {
 
         // publish assets
         $this->publishAssets();
+        
+        // public migrations
+        $this->publishMigrations();
+        
+        // public seeders
+        $this->publishSeeders();
 
     }
 
@@ -89,4 +95,25 @@ class SlideshowServiceProvider extends ServiceProvider {
         ]);
     }
 
+    /**
+     * Publish migrations
+     * @source: foostart/package-slideshow/database/migrations
+     * @destination: database/migrations
+     */
+    protected function publishMigrations() {        
+        $this->publishes([
+            __DIR__ . '/database/migrations' => $this->app->databasePath() . '/migrations',
+        ]);
+    }
+    
+    /**
+     * Publish seeders
+     * @source: foostart/package-slideshow/database/seeders
+     * @destination: database/seeders
+     */
+    protected function publishSeeders() {        
+        $this->publishes([
+            __DIR__ . '/database/seeders' => $this->app->databasePath() . '/seeders',
+        ]);
+    }
 }

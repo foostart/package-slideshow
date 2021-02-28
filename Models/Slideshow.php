@@ -1,7 +1,6 @@
 <?php namespace Foostart\Slideshow\Models;
 
 use Foostart\Category\Library\Models\FooModel;
-use Illuminate\Database\Eloquent\Model;
 
 class Slideshow extends FooModel {
 
@@ -22,45 +21,22 @@ class Slideshow extends FooModel {
         //table name
         $this->table = 'slideshows';
 
-        //list of field in table
-        $this->fillable = [
+        //list of fields in table
+        $this->fillable = array_merge($this->fillable, [
             'slideshow_name',
-            'style_id',
-            'category_id',
-            'user_id',
-            'user_full_name',
-            'user_email',
             'slideshow_overview',
             'slideshow_description',
             'slideshow_image',
             'slideshow_images',
-            'slideshow_status',
-        ];
+            //Relation
+            'style_id',
+            'category_id',
+        ]);
 
         //list of fields for inserting
-        $this->fields = [
+        $this->fields = array_merge($this->fields, [
             'slideshow_name' => [
                 'name' => 'slideshow_name',
-                'type' => 'Text',
-            ],
-            'style_id' => [
-                'name' => 'style_id',
-                'type' => 'Int',
-            ],
-            'category_id' => [
-                'name' => 'category_id',
-                'type' => 'Int',
-            ],
-            'user_id' => [
-                'name' => 'user_id',
-                'type' => 'Int',
-            ],
-            'user_full_name' => [
-                'name' => 'user_full_name',
-                'type' => 'Text',
-            ],
-            'user_email' => [
-                'name' => 'email',
                 'type' => 'Text',
             ],
             'slideshow_overview' => [
@@ -83,22 +59,28 @@ class Slideshow extends FooModel {
                     'author'
                 ]
             ],
-        ];
+            //Releation
+            'style_id' => [
+                'name' => 'style_id',
+                'type' => 'Int',
+            ],
+            'category_id' => [
+                'name' => 'category_id',
+                'type' => 'Int',
+            ],
+        ]);
 
         //check valid fields for inserting
-        $this->valid_insert_fields = [
+        $this->valid_insert_fields = array_merge($this->valid_filter_fields, [
             'slideshow_name',
-            'style_id',
-            'user_id',
-            'category_id',
-            'user_full_name',
-            'updated_at',
             'slideshow_overview',
             'slideshow_description',
             'slideshow_image',
             'slideshow_images',
-            'slideshow_status',
-        ];
+            //Relation
+            'style_id',
+            'category_id',
+        ]);
 
         //check valid fields for ordering
         $this->valid_ordering_fields = [
@@ -117,9 +99,6 @@ class Slideshow extends FooModel {
 
         //the number of items on page
         $this->perPage = 10;
-
-        //item status
-        $this->field_status = 'slideshow_status';
 
     }
 

@@ -23,39 +23,23 @@ class Style extends FooModel {
         $this->table = 'slideshow_styles';
 
         //list of field in table
-        $this->fillable = [
+        $this->fillable = array_merge($this->fillable, [
             'style_name',
             'style_image',
-            'user_id',
-            'user_full_name',
-            'user_email',
             'style_view_file',
             'style_js_file',
             'style_js_file',
             'style_view_content',
-            'style_status'
-        ];
+        ]);
 
         //list of fields for inserting
-        $this->fields = [
+        $this->fields = array_merge($this->fields, [
             'style_name' => [
                 'name' => 'style_name',
                 'type' => 'Text',
             ],
             'style_image' => [
                 'name' => 'style_image',
-                'type' => 'Text',
-            ],
-            'user_id' => [
-                'name' => 'user_id',
-                'type' => 'Int',
-            ],
-            'user_full_name' => [
-                'name' => 'user_full_name',
-                'type' => 'Text',
-            ],
-            'user_email' => [
-                'name' => 'email',
                 'type' => 'Text',
             ],
             'style_view_file' => [
@@ -74,25 +58,17 @@ class Style extends FooModel {
                 'name' => 'style_view_content',
                 'type' => 'Text',
             ],
-            'style_status' => [
-                'name' => 'style_status',
-                'type' => 'Int',
-            ],
-        ];
+        ]);
 
         //check valid fields for inserting
-        $this->valid_insert_fields = [
+        $this->valid_insert_fields = array_merge($this->valid_insert_fields, [
             'style_name',
             'style_image',
-            'user_id',
-            'user_full_name',
-            'user_email',
             'style_view_file',
             'style_js_file',
             'style_css_file',
             'style_view_content',
-            'style_status',
-        ];
+        ]);
 
         //check valid fields for ordering
         $this->valid_ordering_fields = [
@@ -108,12 +84,6 @@ class Style extends FooModel {
 
         //primary key
         $this->primaryKey = 'style_id';
-
-        //the number of items on page
-        $this->perPage = 10;
-
-        //item status
-        $this->field_status = 'style_status';
 
     }
 
