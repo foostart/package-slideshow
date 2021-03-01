@@ -1,6 +1,4 @@
-<?php
-
-namespace Foostart\Slideshow\Controlers\Admin;
+<?php namespace Foostart\Slideshow\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
