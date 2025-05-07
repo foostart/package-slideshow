@@ -46,13 +46,13 @@
 
                     <!--BODY-->
                     <div class="panel-body">
-                        {!! Form::open(['route'=>['styles.delete', 'id' => @$item->id], 'method' => 'get'])  !!}
+                        {!! html()->form('GET', route('styles.delete', ['id' => @$item->id])) !!}
 
                         @include('package-slideshow::admin.style-item')
 
                         {!! csrf_field(); !!}
 
-                        {!! Form::close() !!}
+                        {!! html()->form()->close() !!}
                     </div>
                     <!--/BODY-->
 

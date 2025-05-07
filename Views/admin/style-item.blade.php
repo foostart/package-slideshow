@@ -67,8 +67,8 @@
                     {{ trans($plang_admin.'.columns.operations') }}
                 </span>
 
-                {!! Form::submit(trans($plang_admin.'.buttons.delete'), array("class"=>"btn btn-danger pull-right delete btn-delete-all del-trash", 'name'=>'del-trash')) !!}
-                {!! Form::submit(trans($plang_admin.'.buttons.delete'), array("class"=>"btn btn-warning pull-right delete btn-delete-all del-forever", 'name'=>'del-forever')) !!}
+                {!! html()->form()->submit(trans($plang_admin.'.buttons.delete'))->class('btn btn-danger pull-right delete btn-delete-all del-trash')->name('del-trash') !!}
+                {!! html()->form()->submit(trans($plang_admin.'.buttons.delete'))->class('btn btn-warning pull-right delete btn-delete-all del-forever')->name('del-forever') !!}
             </th>
 
             <!--DELETE-->
@@ -155,5 +155,5 @@
 
 @section('footer_scripts')
     @parent
-    {!! HTML::script('packages/foostart/js/form-table.js')  !!}
+    {!! html()->script('packages/foostart/js/form-table.js') !!}
 @stop
