@@ -16,36 +16,31 @@
                 <th style='width:10%'>
                     {{ trans($plang_admin.'.columns.order') }}
                 </th>
-
                 <!--FILENAME-->
                 <th style='width:90%'>
                     {{ trans($plang_admin.'.columns.filename') }}
                 </th>
-
-
             </tr>
 
             </thead>
 
             <tbody>
-            <?php $version = count($backups) ?>
-            @foreach($backups as  $backup)
-                <tr>
-                    <!--COUNTER-->
-                    <td> {!! 'v.'.$version; $version-- !!}  </td>
+                <?php $version = count($backups) ?>
+                @foreach($backups as  $backup)
+                    <tr>
+                        <!--COUNTER-->
+                        <td> {!! 'v.'.$version; $version-- !!}  </td>
 
-                    <!--NAME-->
-                    <td>
-                        <a href="{!! URL::route('slideshows.config', ['v' => base64_encode($backup)]) !!}">
-                            {!! basename($backup) !!}
-                        </a>
-                    </td>
+                        <!--NAME-->
+                        <td>
+                            <a href="{!! URL::route('slideshows.config', ['v' => base64_encode($backup)]) !!}">
+                                {!! basename($backup) !!}
+                            </a>
+                        </td>
 
-                </tr>
-            @endforeach
-
+                    </tr>
+                @endforeach
             </tbody>
-
         </table>
 
     </div>

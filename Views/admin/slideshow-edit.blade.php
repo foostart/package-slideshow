@@ -51,8 +51,7 @@
                             @include('package-category::admin.partials.errors', ['errors' => $errors])
                         </div>
                     @endif
-                <!-- /END ERROR NAME -->
-
+                    <!-- /END ERROR NAME -->
 
                     {{-- successful message --}}
                     @if(Session::get('message'))
@@ -64,9 +63,7 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-md-12 col-xs-12">
-
                                 @include('package-slideshow::admin.slideshow-form')
-
                             </div>
                         </div>
                     </div>

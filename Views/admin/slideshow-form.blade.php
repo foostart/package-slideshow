@@ -12,12 +12,12 @@
            class="btn btn-danger pull-right margin-left-5 delete">
             {!! trans($plang_admin.'.buttons.delete') !!}
         </a>
-@endif
-<!-- DELETE BUTTON -->
+   @endif
+    <!-- DELETE BUTTON -->
 
     <!-- SAVE BUTTON -->
     {!! html()->form()->submit(trans($plang_admin.'.buttons.save'))->class('btn btn-info pull-right') !!}
-<!-- /SAVE BUTTON -->
+    <!-- /SAVE BUTTON -->
 </div>
 <!--/BUTTONS-->
 

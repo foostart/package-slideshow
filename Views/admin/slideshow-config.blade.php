@@ -16,7 +16,8 @@
 
                     <!--HEADING-->
                     <div class="panel-heading">
-                        <h3 class="panel-title bariol-thin"><i class="fa fa-braille" aria-hidden="true"></i>
+                        <h3 class="panel-title bariol-thin">
+                            <i class="fa fa-braille" aria-hidden="true"></i>
                             {!! trans($plang_admin.'.pages.title-config') !!}
                         </h3>
                     </div>
@@ -30,30 +31,30 @@
                     <!--MESSAGE-->
                     <?php $message = Session::get('message'); ?>
                     @if( isset($message) )
-                        <div class="panel-info alert alert-success flash-message">{!! $message !!}</div>
+                        <div class="panel-info alert alert-success flash-message">
+                            {!! $message !!}
+                        </div>
                     @endif
-                <!--/MESSAGE-->
+                    <!--/MESSAGE-->
 
                     <!--ERRORS-->
                     @if($errors && ! $errors->isEmpty() )
                         @foreach($errors->all() as $error)
-
-                            <div class="alert alert-danger flash-message">{!! $error !!}</div>
-
-                    @endforeach
-                @endif
-                <!--/ERRORS-->
+                            <div class="alert alert-danger flash-message">
+                                {!! $error !!}
+                            </div>
+                        @endforeach
+                      @endif
+                    <!--/ERRORS-->
 
                     <!--BODY-->
                     <div class="panel-body">
                         {!! html()->form('POST', route('slideshows.config'))->open() !!}
 
                         <div class='btn-form'>
-
                             <!-- SAVE BUTTON -->
                             {!! html()->form()->submit(trans($plang_admin.'.buttons.save'))->class('btn btn-info pull-right') !!}
                             <!-- /SAVE BUTTON -->
-
                         </div>
 
                         {!! html()->form()->label('content', trans($plang_admin.'.labels.config')) !!}
@@ -63,7 +64,6 @@
 
                     </div>
                     <!--/BODY-->
-
                 </div>
             </div>
             <!--/LIST OF ITEMS-->
