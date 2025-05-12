@@ -2,7 +2,13 @@
 | List of elements in style form
 |------------------------------------------------------------------------------->
 
-{!! html()->form('POST', route('styles.post', ['id' => @$item->id]))->files()->open() !!}
+<!-- FORM OPEN -->
+@include('package-category::admin.partials.form_open', [
+    'method' => 'POST',
+    'action' => route('styles.post', ['id' => @$item->id]),
+    'file' => true
+])
+
 
 <!--BUTTONS-->
 <div class='btn-form'>
@@ -16,8 +22,12 @@
 <!-- DELETE BUTTON -->
 
     <!-- SAVE BUTTON -->
-    {!! html()->form()->submit(trans($plang_admin.'.buttons.save'))->class('btn btn-info pull-right') !!}
-<!-- /SAVE BUTTON -->
+    @include('package-category::admin.partials.btn_submit', [
+        'label' => trans($plang_admin.'.buttons.save'),
+        'class' => 'btn btn-info pull-right'
+    ])
+
+    <!-- /SAVE BUTTON -->
 </div>
 <!--/BUTTONS-->
 
@@ -131,13 +141,24 @@
 <!--/TAB CONTENT-->
 
 <!--HIDDEN FIELDS-->
-<div class='hidden-field'>
-    {!! html()->hidden('id', @$item->id) !!}
-    {!! html()->hidden('context', $request->get('context', null)) !!}
+    <div class='hidden-field'>
+        @include('package-category::admin.partials.input_text', [
+        'hidden' => true,
+        'name'   => 'id',
+        'id'     => 'id',
+        'value'  => @$item->id
+    ])
+    @include('package-category::admin.partials.input_text', [
+        'hidden' => true,
+        'name'   => 'context',
+        'id'     => 'context',
+        'value'  => $request->get('context', null)
+    ])
 </div>
 <!--/HIDDEN FIELDS-->
 
-{!! html()->form()->close() !!}
+<!-- FORM CLOSE -->
+@include('package-category::admin.partials.form_close')
 <!------------------------------------------------------------------------------
 | End list of elements in style form
 |------------------------------------------------------------------------------>

@@ -67,8 +67,18 @@
                     {{ trans($plang_admin.'.columns.operations') }}
                 </span>
 
-                {!! html()->form()->submit(trans($plang_admin.'.buttons.delete'))->class('btn btn-danger pull-right delete btn-delete-all del-trash')->name('del-trash') !!}
-                {!! html()->form()->submit(trans($plang_admin.'.buttons.delete'))->class('btn btn-warning pull-right delete btn-delete-all del-forever')->name('del-forever') !!}
+                @include('package-category::admin.partials.btn_submit', [
+                    'label' => trans($plang_admin.'.buttons.delete'),
+                    'class' => 'btn btn-danger pull-right delete btn-delete-all del-trash',
+                    'name' => 'del-trash'
+                ])
+
+                @include('package-category::admin.partials.btn_submit', [
+                    'label' => trans($plang_admin.'.buttons.delete'),
+                    'class' => 'btn btn-warning pull-right delete btn-delete-all del-forever',
+                    'name' => 'del-forever'
+                ])
+
             </th>
 
             <!--DELETE-->
@@ -155,5 +165,5 @@
 
 @section('footer_scripts')
     @parent
-    {!! html()->script('packages/foostart/js/form-table.js') !!}
+    <script src="{{ asset('packages/foostart/js/form-table.js') }}"></script>
 @stop

@@ -47,11 +47,20 @@
 
                     <!--BODY-->
                     <div class="panel-body">
-                        {!! html()->form('POST', route('slideshows.lang'))->open() !!}
+                        <!-- FORM OPEN -->
+                        @include('package-category::admin.partials.form_open', [
+                            'method' => 'POST',
+                            'action' => route('slideshows.lang'),
+                        ])
+
                         <div class='btn-form'>
 
                             <!-- SAVE BUTTON -->
-                            {!! html()->submit(trans($plang_admin.'.buttons.save'))->class('btn btn-info pull-right') !!}
+                            @include('package-category::admin.partials.btn_submit', [
+                                'label' => trans($plang_admin.'.buttons.save'),
+                                'class' => 'btn btn-info pull-right'
+                            ])
+
                             <!-- /SAVE BUTTON -->
 
                         </div>
@@ -83,7 +92,8 @@
                         </div>
 
 
-                        {!! html()->form()->close() !!}
+                        <!-- FORM CLOSE -->
+                        @include('package-category::admin.partials.form_close')
                     </div>
                     <!--/BODY-->
 

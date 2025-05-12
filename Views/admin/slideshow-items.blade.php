@@ -46,13 +46,19 @@
 
                     <!--BODY-->
                     <div class="panel-body">
-                        {!! html()->form('GET', route('slideshows.delete', ['id' => @$item->id]))->open() !!}
+                        <!-- FORM OPEN -->
+                        @include('package-category::admin.partials.form_open', [
+                            'method' => 'GET',
+                            'action' => route('slideshows.delete', ['id' => @$item->id]),
+                        ])
+
 
                         @include('package-slideshow::admin.slideshow-item')
 
                         {!! csrf_field(); !!}
 
-                        {!! html()->form()->close() !!}
+                        <!-- FORM CLOSE -->
+                        @include('package-category::admin.partials.form_close')
                     </div>
                     <!--/BODY-->
 

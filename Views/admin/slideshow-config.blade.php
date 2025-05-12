@@ -49,18 +49,27 @@
 
                     <!--BODY-->
                     <div class="panel-body">
-                        {!! html()->form('POST', route('slideshows.config'))->open() !!}
+                        <!-- FORM OPEN -->
+                        @include('package-category::admin.partials.form_open', [
+                            'method' => 'POST',
+                            'action' => route('slideshows.config')
+                        ])
+
 
                         <div class='btn-form'>
                             <!-- SAVE BUTTON -->
-                            {!! html()->form()->submit(trans($plang_admin.'.buttons.save'))->class('btn btn-info pull-right') !!}
+                            @include('package-category::admin.partials.btn_submit', [
+                                'label' => trans($plang_admin.'.buttons.save'),
+                                'class' => 'btn btn-info pull-right'
+                            ])
                             <!-- /SAVE BUTTON -->
                         </div>
 
                         {!! html()->form()->label('content', trans($plang_admin.'.labels.config')) !!}
                         {!! html()->form()->textarea('content', $content)->class('form-control textarea-margin')->attributes(['size' => '30x50']) !!}
 
-                        {!! html()->form()->close() !!}
+                        <!-- FORM CLOSE -->
+                        @include('package-category::admin.partials.form_close')
 
                     </div>
                     <!--/BODY-->
