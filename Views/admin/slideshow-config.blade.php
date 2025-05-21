@@ -65,9 +65,14 @@
                             <!-- /SAVE BUTTON -->
                         </div>
 
-                        {!! html()->form()->label('content', trans($plang_admin.'.labels.config')) !!}
-                        {!! html()->form()->textarea('content', $content)->class('form-control textarea-margin')->attributes(['size' => '30x50']) !!}
-
+                        @include('package-category::admin.partials.textarea', [
+                           'name' => 'content',
+                           'label' => trans($plang_admin.'.labels.config'),
+                           'value' => $content,
+                           'class' => 'form-control textarea-margin',
+                           'cols' => 30,
+                           'rows' => 50,
+                       ])
                         <!-- FORM CLOSE -->
                         @include('package-category::admin.partials.form_close')
 
